@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useLensAuthStore } from '@/stores/auth-store';
 import { toast } from 'sonner';
-import { postId, uri, PostReferenceType } from '@lens-protocol/client';
+import { postId, uri, PostReferenceType, LoggedInPostOperations } from '@lens-protocol/client';
 import { post, fetchPostReferences } from '@lens-protocol/client/actions';
+import { textOnly } from '@lens-protocol/metadata';
 
 export interface Comment {
   id: string;
@@ -24,14 +25,7 @@ export interface Comment {
 interface UseCommentsProps {
   postId: string;
   autoFetch?: boolean;
-  postOperations?: {
-    canComment?: {
-      __typename: 'PostOperationValidationPassed' | 'PostOperationValidationFailed' | 'PostOperationValidationUnknown';
-      reason?: string;
-      unsatisfiedRules?: any[];
-      extraChecksRequired?: any[];
-    };
-  };
+  postOperations?: LoggedInPostOperations | null;
   // Comment filtering options
   referenceTypes?: PostReferenceType[];
   byAuthors?: string[];
@@ -51,7 +45,7 @@ export function useComments({
   const [pageInfo, setPageInfo] = useState<{ next?: string } | null>(null);
   const { currentProfile, sessionClient, client } = useLensAuthStore();
 
-  // Check if user can comment based on post rules
+  // Check if user can comment based on post rules (按官方文档实现)
   const canUserComment = (): boolean => {
     if (!postOperations?.canComment) {
       return false;
@@ -70,7 +64,7 @@ export function useComments({
       
       case 'PostOperationValidationUnknown':
         console.log('Commenting validation unknown - extra checks required:', postOperations.canComment.extraChecksRequired);
-        // Treat as failed unless specific rules are supported
+        // 按官方文档：除非你打算支持特定规则，否则将此视为失败
         return false;
       
       default:
@@ -158,7 +152,7 @@ export function useComments({
       return;
     }
 
-    // Check if user can comment based on post rules
+    // Check if user can comment based on post rules (按官方文档实现)
     if (!canUserComment()) {
       toast.error('You are not allowed to comment on this post');
       return;
@@ -167,10 +161,20 @@ export function useComments({
     try {
       // Create comment using Lens Protocol API
       if (sessionClient) {
+        // Create proper metadata using official Lens textOnly builder
+        const commentMetadata = textOnly({
+          content: content.trim(),
+          locale: "en",
+          // 移除tags避免显示#comment标签
+        });
+        
+        // Use data URI for content (simpler approach)
+        const contentURI = `data:application/json,${encodeURIComponent(JSON.stringify(commentMetadata))}`;
+        
         const result = await post(sessionClient, {
-          contentUri: uri(`lens://${Date.now()}`), // Generate a unique URI for the comment
+          contentUri: uri(contentURI),
           commentOn: {
-            post: postId(commentPostId), // the post to comment on
+            post: postId(commentPostId),
           },
         });
 
@@ -179,9 +183,8 @@ export function useComments({
         }
 
         // Create new comment object with a temporary ID for local state
-        // The actual Lens post ID will be available after transaction confirmation
         const newComment: Comment = {
-          id: `temp-${Date.now()}`, // Temporary ID for local state
+          id: `temp-${Date.now()}`,
           content: content.trim(),
           author: {
             username: currentProfile.username,
@@ -191,15 +194,12 @@ export function useComments({
           likes: 0
         };
 
-        // Add to comments list
+        // Add to comments list (乐观更新)
         setComments(prev => [newComment, ...prev]);
         toast.success('Comment added successfully!');
         
-        // Refresh comments to get the real data
-        setTimeout(() => {
-          fetchComments();
-        }, 1000);
       } else {
+        toast.error('Please login with Lens to comment');
         throw new Error('Session client not available');
       }
     } catch (err) {
@@ -210,10 +210,11 @@ export function useComments({
 
 
   useEffect(() => {
-    if (autoFetch && commentPostId) {
+    if (autoFetch && commentPostId && comments.length === 0) {
+      // 只在评论为空时才自动获取，避免清空已有评论
       fetchComments();
     }
-  }, [commentPostId, autoFetch, referenceTypes, byAuthors]);
+  }, [commentPostId]); // 简化依赖数组，只监听postId变化
 
   return {
     comments,
@@ -226,3 +227,4 @@ export function useComments({
     canComment: canUserComment()
   };
 }
+

@@ -89,7 +89,9 @@ export function useFeed(options: useFeedOptions = {}) {
         return;
       }
       
-      const filteredPosts = items.filter(item => item.__typename === 'Post') as Post[];
+      const filteredPosts = items
+        .filter(item => item.__typename === 'Post')
+        .filter(item => !item.commentOn) as Post[]; // 过滤掉评论类Post
 
       // Initialize post states for actions
       filteredPosts.forEach(post => {
@@ -137,7 +139,9 @@ export function useFeed(options: useFeedOptions = {}) {
       if (result.isErr()) return;
       
       const { items } = result.value;
-      const filteredPosts = items.filter(item => item.__typename === 'Post') as Post[];
+      const filteredPosts = items
+        .filter(item => item.__typename === 'Post')
+        .filter(item => !item.commentOn) as Post[]; // 过滤掉评论类Post
       if (filteredPosts.length > 0 && filteredPosts[0].id !== lastPostIdRef.current) {
         setNewPostsAvailable(true);
       }
@@ -199,7 +203,9 @@ export function useFeed(options: useFeedOptions = {}) {
           return;
         }
         
-        const filteredPosts = items.filter(item => item.__typename === 'Post') as Post[];
+        const filteredPosts = items
+        .filter(item => item.__typename === 'Post')
+        .filter(item => !item.commentOn) as Post[]; // 过滤掉评论类Post
 
         // Initialize post states for actions
         filteredPosts.forEach(post => {
@@ -235,7 +241,9 @@ export function useFeed(options: useFeedOptions = {}) {
         if (result.isErr()) return;
         
         const { items } = result.value;
-        const filteredPosts = items.filter(item => item.__typename === 'Post') as Post[];
+        const filteredPosts = items
+        .filter(item => item.__typename === 'Post')
+        .filter(item => !item.commentOn) as Post[]; // 过滤掉评论类Post
         if (filteredPosts.length > 0 && filteredPosts[0].id !== lastPostIdRef.current) {
           setNewPostsAvailable(true);
         }

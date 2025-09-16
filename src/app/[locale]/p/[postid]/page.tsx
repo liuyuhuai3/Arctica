@@ -23,6 +23,7 @@ export default function PostPage() {
     post,
     loading,
     error,
+    operations,
   } = usePost({
     postId,
     autoFetch: true
@@ -36,7 +37,8 @@ export default function PostPage() {
     refetch: refetchComments
   } = useComments({
     postId,
-    autoFetch: isInlineMode
+    autoFetch: isInlineMode,
+    postOperations: post?.operations
   });
 
   if (loading) {

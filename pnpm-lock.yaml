@@ -18,14 +18,11 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
       '@lens-protocol/client':
-        specifier: 0.0.0-canary-20250624084811
-        version: 0.0.0-canary-20250624084811(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
+        specifier: 0.0.0-canary-20250430134539
+        version: 0.0.0-canary-20250430134539(@lens-chain/sdk@1.0.3(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)))(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
       '@lens-protocol/metadata':
         specifier: ^2.1.0
         version: 2.1.0(typescript@5.8.3)(zod@3.25.67)
-      '@lens-protocol/react':
-        specifier: 0.0.0-canary-20250624084811
-        version: 0.0.0-canary-20250624084811(@types/react@18.3.23)(@urql/core@5.1.1(graphql@16.11.0))(react@18.3.1)(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
       '@lens-protocol/react-web':
         specifier: latest
         version: 2.3.2(@types/react@18.3.23)(@xmtp/react-sdk@9.0.0(@types/react@18.3.23)(@xmtp/content-type-primitives@1.0.3)(@xmtp/content-type-reaction@1.1.12)(@xmtp/content-type-remote-attachment@1.1.12)(@xmtp/content-type-reply@1.1.12)(@xmtp/xmtp-js@12.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))(react@18.3.1))(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@5.0.10)
@@ -234,16 +231,16 @@ importers:
 
 packages:
 
-  '@0no-co/graphql.web@1.1.2':
-    resolution: {integrity: sha512-N2NGsU5FLBhT8NZ+3l2YrzZSHITjNXNuDhC4iDiikv0IujaJ0Xc6xIxQZ/Ek3Cb+rgPjnLHYyJm11tInuJn+cw==}
+  '@0no-co/graphql.web@1.2.0':
+    resolution: {integrity: sha512-/1iHy9TTr63gE1YcR5idjx8UREz1s0kFhydf3bBLCXyqjhkIc6igAzTOx3zPifCwFR87tsh/4Pa9cNts6d2otw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     peerDependenciesMeta:
       graphql:
         optional: true
 
-  '@0no-co/graphqlsp@1.12.16':
-    resolution: {integrity: sha512-B5pyYVH93Etv7xjT6IfB7QtMBdaaC07yjbhN6v8H7KgFStMkPvi+oWYBTibMFRMY89qwc9H8YixXg8SXDVgYWw==}
+  '@0no-co/graphqlsp@1.15.0':
+    resolution: {integrity: sha512-SReJAGmOeXrHGod+9Odqrz4s43liK0b2DFUetb/jmYvxFpWmeNfFYo0seCh0jz8vG3p1pnYMav0+Tm7XwWtOJw==}
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
       typescript: ^5.0.0
@@ -544,8 +541,8 @@ packages:
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
 
-  '@gql.tada/cli-utils@1.6.3':
-    resolution: {integrity: sha512-jFFSY8OxYeBxdKi58UzeMXG1tdm4FVjXa8WHIi66Gzu9JWtCE6mqom3a8xkmSw+mVaybFW5EN2WXf1WztJVNyQ==}
+  '@gql.tada/cli-utils@1.7.1':
+    resolution: {integrity: sha512-wg5ysZNQxtNQm67T3laVWmZzLpGb7QfyYWZdaUD2r1OjDj5Bgftq7eQlplmH+hsdffjuUyhJw/b5XAjeE2mJtg==}
     peerDependencies:
       '@0no-co/graphqlsp': ^1.12.13
       '@gql.tada/svelte-support': 1.0.1
@@ -630,13 +627,16 @@ packages:
   '@lens-protocol/blockchain-bindings@0.10.2':
     resolution: {integrity: sha512-WIlp30gohy/EuTD+Oqb2ACftpIkBE3wOC1WgiaFeu1ybpnIY0PnUn0hAQeecG6TIekhP3VvMXK82BXppsv2Nhw==}
 
-  '@lens-protocol/client@0.0.0-canary-20250624084811':
-    resolution: {integrity: sha512-Pec85KF/BvCTYjEKu3VJun9NaUV/5rB+0Idt4n/tqNYDZcnOnaY87E9cfLf2gCV1qXdy5I5wojSQa7XO8BVqyg==}
+  '@lens-protocol/client@0.0.0-canary-20250430134539':
+    resolution: {integrity: sha512-vVG89Fw27FvSKeV9sxr6OzxKqoP1gib7dT0hj17/4pNt0NMPq5tROyCj4OngWXIpH5Z0OpiFBOR73kBZ4USoTg==}
     peerDependencies:
+      '@lens-chain/sdk': ^1.0.0
       ethers: ^6.13.4
       viem: ^2.21.53
       zksync-ethers: ^6.15.3
     peerDependenciesMeta:
+      '@lens-chain/sdk':
+        optional: true
       ethers:
         optional: true
       viem:
@@ -664,11 +664,11 @@ packages:
       wait-for-expect:
         optional: true
 
-  '@lens-protocol/env@0.0.0-canary-20250624084811':
-    resolution: {integrity: sha512-+0usA3PVUlfG4HdGvD3kdx5AY+jdG6ohEKPDw/dNaIssFDvjymcubFVnpsIjb3P/Ib8VxCTEoSPVJXjtIHy2Tw==}
+  '@lens-protocol/env@0.0.0-canary-20250430134539':
+    resolution: {integrity: sha512-aZqxaeW22tBdz9sc6+7eFHp86sKNzQ1Snabpr9vT4vn8oxlDt6XTQL/Fxhm0e33wQff5/aOirs6iQ7swhTbiZg==}
 
-  '@lens-protocol/graphql@0.0.0-canary-20250624084811':
-    resolution: {integrity: sha512-c52KeRyxcy8Nxw9a48BQzPIc3nWl9IIQel1DqNO8JfD68+4FfSeKYk6SSyNYmXsbCfgsVnbR/TN7gttomEqPvA==}
+  '@lens-protocol/graphql@0.0.0-canary-20250430134539':
+    resolution: {integrity: sha512-PA7ZMLh5muiwJXP9bQqEReOH6WKWru3cM96E4yLv1c7qBsP7hn0MIu+QrUUUut4lQuQpOYonstMb0Cn4N5Nh5Q==}
 
   '@lens-protocol/metadata@1.2.0':
     resolution: {integrity: sha512-fUB8+GvYiVt1uMqYJi/iN/aw/lzE+oEfpTjraTI87MqWPgYubbx0vFySjJs7uAdI7oftczvlwhthmMUl5DDuGA==}
@@ -700,24 +700,6 @@ packages:
       '@xmtp/react-sdk':
         optional: true
 
-  '@lens-protocol/react@0.0.0-canary-20250624084811':
-    resolution: {integrity: sha512-Frs4Rhxhhve+W0hWXRgtkSItNHoAqBU95sgSs3t3Vc8jvgT2jD92mQ4EGxido1+tc7y0aguxRkygoNssym8eIw==}
-    peerDependencies:
-      '@types/react': ^18.3.12
-      ethers: ^6.13.4
-      react: ^18.3.1
-      viem: ^2.21.33
-      zksync-ethers: ^6.15.3
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      ethers:
-        optional: true
-      viem:
-        optional: true
-      zksync-ethers:
-        optional: true
-
   '@lens-protocol/react@2.3.2':
     resolution: {integrity: sha512-iXqpmKXy4ieTBD7sbpT4rUzbvs1J9RQYEjppsuui27CkUPI4JpwhwqwTCOsqxdvUdUFEE4A5ge/7Y4ez1uUoQQ==}
     peerDependencies:
@@ -730,14 +712,14 @@ packages:
   '@lens-protocol/shared-kernel@0.12.0':
     resolution: {integrity: sha512-+trBZPjGDSRMVafZF6jXcfKc8UVHr1bVRjxeAVO1ZpR7zWfampJhxMO+7jbmmhvmYmf5Losp7Ffq4//szKloaA==}
 
-  '@lens-protocol/storage@0.0.0-canary-20250624084811':
-    resolution: {integrity: sha512-NRF94UODsTZEIoEHwU92Sk+m2K8xvfNmZfXS2HrX9F8x2zQfw6JoBjYpEmZX/dEZcMTeTAuz7A1hlavkJ1n7nA==}
+  '@lens-protocol/storage@0.0.0-canary-20250430134539':
+    resolution: {integrity: sha512-ja1teDhpCqLxwVGngJuTuy32ppKxxW2dr7G9f//vxNgoV93u2BNrcqJ/sEWTskok1gKMgRCpruyLWr4KN+VQog==}
 
   '@lens-protocol/storage@0.8.1':
     resolution: {integrity: sha512-9nOf8wnDEYAd6Jjoqw5kM7YvZ+g1Y9LfhLfP0ZcAl/nx3uPWBO0cT7GSZWBXAwQ7ayW6Kno5P+vFoBFEaNVVLQ==}
 
-  '@lens-protocol/types@0.0.0-canary-20250624084811':
-    resolution: {integrity: sha512-T0Cd9MdSZQqRnQQzCc3ol4dptLYiKdZgQo+JSYN13hRWPOjst25bzH0nRDOhLM7ayeXWSR/4HALDX+iWSfcfjA==}
+  '@lens-protocol/types@0.0.0-canary-20250430134539':
+    resolution: {integrity: sha512-7JtfJpYfSC8P+t3w2lzaSgXbH1IvQpo/pxunnztl9TktIqHbnkxiRHKLWffvOqVo3JpLVb3Cye1/nLhV7ENSQA==}
 
   '@lens-protocol/wagmi@4.1.5':
     resolution: {integrity: sha512-8C4jQe73PkPAkdlB0WDqtA7k3f9uFMLn/xaJcW8GTbyslYrc1/bDLIIw6KuZMXAvpDX5PJbtUG7AJEgz/jYLmg==}
@@ -1809,8 +1791,8 @@ packages:
   '@reown/appkit@1.7.8':
     resolution: {integrity: sha512-51kTleozhA618T1UvMghkhKfaPcc9JlKwLJ5uV+riHyvSoWPKPRIa5A6M1Wano5puNyW0s3fwywhyqTHSilkaA==}
 
-  '@rollup/rollup-linux-x64-gnu@4.44.1':
-    resolution: {integrity: sha512-EtnsrmZGomz9WxK1bR5079zee3+7a+AdFlghyd6VbAjgRJDbTANJ9dcPIPAi76uG05micpEL+gPGmAKYTschQw==}
+  '@rollup/rollup-linux-x64-gnu@4.50.1':
+    resolution: {integrity: sha512-MCgtFB2+SVNuQmmjHf+wfI4CMxy3Tk8XjA5Z//A0AKD7QXUYFMQcns91K6dEHBvZPCnhJSyDWLApk40Iq/H3tA==}
     cpu: [x64]
     os: [linux]
 
@@ -1924,8 +1906,8 @@ packages:
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
-  '@urql/core@5.1.1':
-    resolution: {integrity: sha512-aGh024z5v2oINGD/In6rAtVKTm4VmQ2TxKQBAtk2ZSME5dunZFcjltw4p5ENQg+5CBhZ3FHMzl0Oa+rwqiWqlg==}
+  '@urql/core@5.2.0':
+    resolution: {integrity: sha512-/n0ieD0mvvDnVAXEQgX/7qJiVcvYvNkOHeBvkwtylfjydar123caCXcl58PXFY11oU1oquJocVXHxLAbtv4x1A==}
 
   '@urql/exchange-auth@2.2.1':
     resolution: {integrity: sha512-n4xUxxjvY36GJh539sLaPFyvFzreADOv8EFQdTiXOCIRVoXXhWVVI7DjY/HNtLICfbg1+UlbvQ7sNkwaBouDHg==}
@@ -2784,8 +2766,8 @@ packages:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
 
-  gql.tada@1.8.10:
-    resolution: {integrity: sha512-FrvSxgz838FYVPgZHGOSgbpOjhR+yq44rCzww3oOPJYi0OvBJjAgCiP6LEokZIYND2fUTXzQAyLgcvgw1yNP5A==}
+  gql.tada@1.8.13:
+    resolution: {integrity: sha512-fYoorairdPgxtE7Sf1X9/6bSN9Kt2+PN8KLg3hcF8972qFnawwUgs1OLVU8efZMHwL7EBHhhKBhrsGPlOs2lZQ==}
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -4042,12 +4024,6 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  urql@4.2.2:
-    resolution: {integrity: sha512-3GgqNa6iF7bC4hY/ImJKN4REQILcSU9VKcKL8gfELZM8mM5BnLH1BsCc8kBdnVGD1LIFOs4W3O2idNHhON1r0w==}
-    peerDependencies:
-      '@urql/core': ^5.0.0
-      react: '>= 16.8.0'
-
   use-callback-ref@1.3.3:
     resolution: {integrity: sha512-jQL3lRnocaFtu3V00JToYz/4QkNWswxijDaCVNZRiRTO3HQDLsdu1ZtmIUvV4yPp+rvWm5j0y0TG/S61cuijTg==}
     engines: {node: '>=10'}
@@ -4381,11 +4357,11 @@ packages:
 
 snapshots:
 
-  '@0no-co/graphql.web@1.1.2(graphql@16.11.0)':
+  '@0no-co/graphql.web@1.2.0(graphql@16.11.0)':
     optionalDependencies:
       graphql: 16.11.0
 
-  '@0no-co/graphqlsp@1.12.16(graphql@16.11.0)(typescript@5.8.3)':
+  '@0no-co/graphqlsp@1.15.0(graphql@16.11.0)(typescript@5.8.3)':
     dependencies:
       '@gql.tada/internal': 1.0.8(graphql@16.11.0)(typescript@5.8.3)
       graphql: 16.11.0
@@ -4912,16 +4888,16 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@gql.tada/cli-utils@1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.11.0)(typescript@5.8.3))(graphql@16.11.0)(typescript@5.8.3)':
+  '@gql.tada/cli-utils@1.7.1(@0no-co/graphqlsp@1.15.0(graphql@16.11.0)(typescript@5.8.3))(graphql@16.11.0)(typescript@5.8.3)':
     dependencies:
-      '@0no-co/graphqlsp': 1.12.16(graphql@16.11.0)(typescript@5.8.3)
+      '@0no-co/graphqlsp': 1.15.0(graphql@16.11.0)(typescript@5.8.3)
       '@gql.tada/internal': 1.0.8(graphql@16.11.0)(typescript@5.8.3)
       graphql: 16.11.0
       typescript: 5.8.3
 
   '@gql.tada/internal@1.0.8(graphql@16.11.0)(typescript@5.8.3)':
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.11.0)
+      '@0no-co/graphql.web': 1.2.0(graphql@16.11.0)
       graphql: 16.11.0
       typescript: 5.8.3
 
@@ -4998,18 +4974,18 @@ snapshots:
       - utf-8-validate
       - wait-for-expect
 
-  '@lens-protocol/client@0.0.0-canary-20250624084811(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))':
+  '@lens-protocol/client@0.0.0-canary-20250430134539(@lens-chain/sdk@1.0.3(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)))(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))':
     dependencies:
-      '@lens-chain/sdk': 1.0.3(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
-      '@lens-protocol/env': 0.0.0-canary-20250624084811
-      '@lens-protocol/graphql': 0.0.0-canary-20250624084811(typescript@5.8.3)
-      '@lens-protocol/storage': 0.0.0-canary-20250624084811
-      '@lens-protocol/types': 0.0.0-canary-20250624084811
-      '@urql/core': 5.1.1(graphql@16.11.0)
-      '@urql/exchange-auth': 2.2.1(@urql/core@5.1.1(graphql@16.11.0))
+      '@lens-protocol/env': 0.0.0-canary-20250430134539
+      '@lens-protocol/graphql': 0.0.0-canary-20250430134539(typescript@5.8.3)
+      '@lens-protocol/storage': 0.0.0-canary-20250430134539
+      '@lens-protocol/types': 0.0.0-canary-20250430134539
+      '@urql/core': 5.2.0(graphql@16.11.0)
+      '@urql/exchange-auth': 2.2.1(@urql/core@5.2.0(graphql@16.11.0))
       graphql: 16.11.0
       jwt-decode: 4.0.0
     optionalDependencies:
+      '@lens-chain/sdk': 1.0.3(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
       viem: 2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)
     transitivePeerDependencies:
       - '@gql.tada/svelte-support'
@@ -5021,14 +4997,14 @@ snapshots:
       '@lens-protocol/shared-kernel': 0.12.0
       tslib: 2.8.1
 
-  '@lens-protocol/env@0.0.0-canary-20250624084811':
+  '@lens-protocol/env@0.0.0-canary-20250430134539':
     dependencies:
-      '@lens-protocol/types': 0.0.0-canary-20250624084811
+      '@lens-protocol/types': 0.0.0-canary-20250430134539
 
-  '@lens-protocol/graphql@0.0.0-canary-20250624084811(typescript@5.8.3)':
+  '@lens-protocol/graphql@0.0.0-canary-20250430134539(typescript@5.8.3)':
     dependencies:
-      '@lens-protocol/types': 0.0.0-canary-20250624084811
-      gql.tada: 1.8.10(graphql@16.11.0)(typescript@5.8.3)
+      '@lens-protocol/types': 0.0.0-canary-20250430134539
+      gql.tada: 1.8.13(graphql@16.11.0)(typescript@5.8.3)
       graphql: 16.11.0
       type-fest: 4.41.0
     transitivePeerDependencies:
@@ -5075,23 +5051,6 @@ snapshots:
       - subscriptions-transport-ws
       - utf-8-validate
       - wait-for-expect
-
-  '@lens-protocol/react@0.0.0-canary-20250624084811(@types/react@18.3.23)(@urql/core@5.1.1(graphql@16.11.0))(react@18.3.1)(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))':
-    dependencies:
-      '@lens-protocol/client': 0.0.0-canary-20250624084811(typescript@5.8.3)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
-      '@lens-protocol/env': 0.0.0-canary-20250624084811
-      '@lens-protocol/graphql': 0.0.0-canary-20250624084811(typescript@5.8.3)
-      '@lens-protocol/types': 0.0.0-canary-20250624084811
-      react: 18.3.1
-      urql: 4.2.2(@urql/core@5.1.1(graphql@16.11.0))(react@18.3.1)
-    optionalDependencies:
-      '@types/react': 18.3.23
-      viem: 2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)
-    transitivePeerDependencies:
-      - '@gql.tada/svelte-support'
-      - '@gql.tada/vue-support'
-      - '@urql/core'
-      - typescript
 
   '@lens-protocol/react@2.3.2(@types/react@18.3.23)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@5.0.10)':
     dependencies:
@@ -5142,9 +5101,9 @@ snapshots:
       traverse: 0.6.11
       tslib: 2.8.1
 
-  '@lens-protocol/storage@0.0.0-canary-20250624084811':
+  '@lens-protocol/storage@0.0.0-canary-20250430134539':
     dependencies:
-      '@lens-protocol/types': 0.0.0-canary-20250624084811
+      '@lens-protocol/types': 0.0.0-canary-20250430134539
       zod: 3.25.67
 
   '@lens-protocol/storage@0.8.1':
@@ -5153,7 +5112,7 @@ snapshots:
       tslib: 2.8.1
       zod: 3.25.67
 
-  '@lens-protocol/types@0.0.0-canary-20250624084811':
+  '@lens-protocol/types@0.0.0-canary-20250430134539':
     dependencies:
       neverthrow: 8.2.0
       type-fest: 4.41.0
@@ -6532,7 +6491,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@rollup/rollup-linux-x64-gnu@4.44.1':
+  '@rollup/rollup-linux-x64-gnu@4.50.1':
     optional: true
 
   '@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)':
@@ -6670,16 +6629,16 @@ snapshots:
 
   '@types/trusted-types@2.0.7': {}
 
-  '@urql/core@5.1.1(graphql@16.11.0)':
+  '@urql/core@5.2.0(graphql@16.11.0)':
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.11.0)
+      '@0no-co/graphql.web': 1.2.0(graphql@16.11.0)
       wonka: 6.3.5
     transitivePeerDependencies:
       - graphql
 
-  '@urql/exchange-auth@2.2.1(@urql/core@5.1.1(graphql@16.11.0))':
+  '@urql/exchange-auth@2.2.1(@urql/core@5.2.0(graphql@16.11.0))':
     dependencies:
-      '@urql/core': 5.1.1(graphql@16.11.0)
+      '@urql/core': 5.2.0(graphql@16.11.0)
       wonka: 6.3.5
 
   '@wagmi/connectors@5.8.5(@types/react@18.3.23)(@wagmi/core@2.17.3(@tanstack/query-core@5.81.2)(@types/react@18.3.23)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@18.3.1))(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)))(bufferutil@4.0.9)(react@18.3.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))(zod@3.25.67)':
@@ -8144,11 +8103,11 @@ snapshots:
 
   gopd@1.2.0: {}
 
-  gql.tada@1.8.10(graphql@16.11.0)(typescript@5.8.3):
+  gql.tada@1.8.13(graphql@16.11.0)(typescript@5.8.3):
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.11.0)
-      '@0no-co/graphqlsp': 1.12.16(graphql@16.11.0)(typescript@5.8.3)
-      '@gql.tada/cli-utils': 1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.11.0)(typescript@5.8.3))(graphql@16.11.0)(typescript@5.8.3)
+      '@0no-co/graphql.web': 1.2.0(graphql@16.11.0)
+      '@0no-co/graphqlsp': 1.15.0(graphql@16.11.0)(typescript@5.8.3)
+      '@gql.tada/cli-utils': 1.7.1(@0no-co/graphqlsp@1.15.0(graphql@16.11.0)(typescript@5.8.3))(graphql@16.11.0)(typescript@5.8.3)
       '@gql.tada/internal': 1.0.8(graphql@16.11.0)(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -8516,7 +8475,7 @@ snapshots:
 
   neverthrow@8.2.0:
     optionalDependencies:
-      '@rollup/rollup-linux-x64-gnu': 4.44.1
+      '@rollup/rollup-linux-x64-gnu': 4.50.1
 
   next-intl@4.3.4(next@14.2.16(@babel/core@7.27.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(typescript@5.8.3):
     dependencies:
@@ -9460,12 +9419,6 @@ snapshots:
       browserslist: 4.25.1
       escalade: 3.2.0
       picocolors: 1.1.1
-
-  urql@4.2.2(@urql/core@5.1.1(graphql@16.11.0))(react@18.3.1):
-    dependencies:
-      '@urql/core': 5.1.1(graphql@16.11.0)
-      react: 18.3.1
-      wonka: 6.3.5
 
   use-callback-ref@1.3.3(@types/react@18.3.23)(react@18.3.1):
     dependencies:

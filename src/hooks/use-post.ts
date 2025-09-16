@@ -151,7 +151,13 @@ export function usePost(options: UsePostOptions): UsePostReturn {
       const { items, pageInfo } = result.value;
       
       if (isRefresh || !cursor) {
-        setComments([...items]);
+        // 保留临时评论（ID以temp-开头的评论）
+        setComments(prev => {
+          const tempComments = prev.filter(comment => 
+            comment.id && typeof comment.id === 'string' && comment.id.startsWith('temp-')
+          );
+          return [...tempComments, ...items];
+        });
       } else {
         setComments(prev => [...prev, ...items]);
       }
