@@ -46,6 +46,10 @@ export function CommentSection({
     refreshComments 
   } = useComments({ postId: post.id });
 
+  // Get auth and wallet client
+  const { sessionClient, currentProfile } = useLensAuthStore();
+  const { data: walletClient } = useWalletClient();
+
   // Get post actions for the main post (only if it's a Post)
   const { operations, isLoggedIn } = usePostActions(
     post.__typename === "Post" ? post : null
@@ -63,10 +67,21 @@ export function CommentSection({
   
   const postState = post.__typename === "Post" ? getPostState(post.id) : undefined;
   const canComment = postState?.operations?.canComment ?? false;
-
-  // Get auth and wallet client
-  const { sessionClient } = useLensAuthStore();
-  const { data: walletClient } = useWalletClient();
+  
+  // Debug logging for comment permissions
+  React.useEffect(() => {
+    if (post.__typename === "Post") {
+      console.log("Comment Debug Info:", {
+        postId: post.id,
+        postState: postState,
+        canComment: canComment,
+        operations: postState?.operations,
+        postOperations: post.operations,
+        isLoggedIn: isLoggedIn,
+        currentProfile: currentProfile
+      });
+    }
+  }, [post, postState, canComment, isLoggedIn, currentProfile]);
 
   const handleSubmitComment = async () => {
     if (!newComment.trim() || isSubmitting) return;

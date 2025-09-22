@@ -3,6 +3,24 @@ import { addReaction, bookmarkPost, undoBookmarkPost, undoReaction } from "@lens
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo } from "react";
 import { useSharedPostActions } from "@/contexts/post-actions-context";
+import { LoggedInPostOperations } from "@lens-protocol/client";
+
+// Helper function to convert LoggedInPostOperations to BooleanPostOperations
+const convertToBooleanOperations = (operations: LoggedInPostOperations) => {
+  return {
+    hasUpvoted: operations.hasUpvoted,
+    hasBookmarked: operations.hasBookmarked,
+    hasReposted: operations.hasReposted.optimistic,
+    hasQuoted: operations.hasQuoted.optimistic,
+    canComment: operations.canComment.__typename === "PostOperationValidationPassed",
+    canRepost: operations.canRepost.__typename === "PostOperationValidationPassed",
+    canQuote: operations.canQuote.__typename === "PostOperationValidationPassed",
+    canBookmark: true,
+    canCollect: operations.canSimpleCollect.__typename === "SimpleCollectValidationPassed",
+    canTip: operations.canTip,
+    canDelete: operations.canDelete?.__typename === "PostOperationValidationPassed",
+  };
+};
 import { useLensAuthStore } from "@/stores/auth-store";
 import { toast } from "sonner";
 import { resolveUrl } from "@/utils/resolve-url";
@@ -19,7 +37,8 @@ export const usePostActions = (post: Post | null) => {
 
   useEffect(() => {
     if (post) {
-      initPostState(post);
+      // Pass the post.operations if available, otherwise let initPostState handle it
+      initPostState(post, post.operations || undefined);
     }
   }, [post, initPostState]);
   
@@ -42,7 +61,7 @@ export const usePostActions = (post: Post | null) => {
   const { stats, operations, isCommentSheetOpen, isCollectSheetOpen } = useMemo(
     () => ({
       stats: sharedState?.stats ?? post?.stats ?? { upvotes: 0, downvotes: 0, comments: 0, mirrors: 0, quotes: 0, bookmarks: 0, collects: 0 },
-      operations: sharedState?.operations ?? defaultOperations,
+      operations: sharedState?.operations ?? (post?.operations ? convertToBooleanOperations(post.operations) : defaultOperations),
       isCommentSheetOpen: sharedState?.isCommentSheetOpen ?? false,
       isCollectSheetOpen: sharedState?.isCollectSheetOpen ?? false,
     }),
