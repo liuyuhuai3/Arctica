@@ -17,7 +17,7 @@ export function isValidArticlePost(post: AnyPost): boolean {
     // 检查是否是评论：评论会有 commentOn 字段
     !post.commentOn &&
     // 确保是我端帖子
-    post.app?.address === evmAddress(env.NEXT_PUBLIC_APP_ADDRESS_TESTNET)
+    post.app?.address === evmAddress(env.NEXT_PUBLIC_APP_ADDRESS)
     // 确保有元数据
     //post.metadata?.__typename !== undefined
   );
@@ -72,7 +72,7 @@ export function useFeed(options: useFeedOptions = {}) {
     
     // 基础筛选条件
     if (type === "global") {
-      baseFilter = { apps: [evmAddress(env.NEXT_PUBLIC_APP_ADDRESS_TESTNET)] };
+      baseFilter = { apps: [evmAddress(env.NEXT_PUBLIC_APP_ADDRESS)] };
     } else if (type === "profile" && profileAddress) {
       baseFilter = { authors: [profileAddress] };
     } else if (type === "custom" && customFilter) {

@@ -39,6 +39,7 @@ import { useReconnectWallet } from "@/hooks/auth/use-reconnect-wallet"
 import { toast } from "sonner"
 import copy from "copy-to-clipboard";
 import { evmAddress} from "@lens-protocol/client";
+import { env } from "@/lib/env";
 
 import { Toast } from "@/components/editer/Toast"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
@@ -363,7 +364,7 @@ export function ArtCreateForm({ onClose, onComplete }: ArtCreateFormProps) {
       await post(client, {
         contentUri: uri,
         //feed,
-        feed: evmAddress("0xd74a3C23DB0BFEA48007BeA447a5D20C422242fb")//Arctica works-feed for uploading fanworks on Arctica
+        feed: evmAddress(env.NEXT_PUBLIC_COOK_ADDRESS)//Arctica works-feed for uploading fanworks on Arctica
         //actions,
       })
       .andThen(handleOperationWith(walletClient))

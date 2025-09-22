@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Bold, Italic, Underline, Strikethrough, Link, AtSign, MessageSquare, Plus, X, Search, Expand, Globe } from "lucide-react"
 import { TagDisplay } from "@/components/ui/tag-display"
+import { SearchResults } from "@/components/dialogs/search/search-results"
+import { useFeed } from "@/hooks/use-feed"
 //import { Input } from "@/components/ui/input"
 
 
@@ -43,18 +45,10 @@ export function UnifiedEditor({
   const [selectedTags, setSelectedTags] = useState<Tag[]>([])
   const titleRef = useRef<HTMLTextAreaElement>(null)
   const contentRef = useRef<HTMLTextAreaElement>(null)
+  
+  // 获取 feed 数据用于标签搜索
+  const { posts } = useFeed()
 
-  const suggestedTags: Tag[] = [
-    { name: "彩虹" },
-    { name: "彩虹六号" },
-    { name: "刺客信条" },
-    { name: "刺客信条I" },
-    { name: "rwby" },
-    { name: "刺客信条II" },
-    { name: "刺客信条III" },
-    { name: "刺客信条IV" },
-    { name: "刺客信条V" },
-  ]
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value
@@ -212,43 +206,29 @@ export function UnifiedEditor({
             {/* Tag Suggestions */}
             {tagInput.length > 0 && (
               <div className="space-y-2">
-                <p className="text-sm font-medium text-gray-700">搜索结果:</p>
-                <div className="max-h-48 overflow-y-auto custom-scrollbar space-y-1">
-                  {suggestedTags
-                    .filter((tag) => tag.name.toLowerCase().includes(tagInput.toLowerCase()))
-                    .map((tag, index) => (
-                      <button
-                        key={`suggestion-${tag.name}-${index}`}
-                        type="button"
-                        onClick={() => addTagToSelection(tag)}
-                        disabled={selectedTags.find((t) => t.name === tag.name) !== undefined}
-                        className="w-full text-left p-3 rounded-lg transition-all duration-200 hover:bg-gray-50 flex items-center justify-between disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-gray-800 font-medium">#</span>
-                          <span className="text-teal-500 font-medium">{tag.name}</span>
-                        </div>
-                        <span className="text-gray-400 text-sm">{Math.floor(Math.random() * 10000)}参与</span>
-                      </button>
-                    ))}
-
-                  {/* Create new tag option */}
-                  {tagInput.length > 0 &&
-                    !suggestedTags.find((t) => t.name.toLowerCase() === tagInput.toLowerCase()) && (
-                      <button
-                        type="button"
-                        onClick={() => addTagToSelection({ name: tagInput })}
-                        disabled={selectedTags.find((t) => t.name === tagInput) !== undefined}
-                        className="w-full text-left p-3 rounded-lg transition-all duration-200 hover:bg-gray-50 flex items-center justify-between border-t border-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-gray-800 font-medium">#</span>
-                          <span className="font-medium text-zinc-700">{tagInput}</span>
-                        </div>
-                        <span className="text-gray-400 text-sm">创建新标签</span>
-                      </button>
-                    )}
-                </div>
+                <SearchResults 
+                  searchValue={tagInput} 
+                  selectedType="tag" 
+                  isLoading={false}
+                  feedPosts={posts}
+                  onTagClick={(tag) => addTagToSelection({ name: tag })}
+                />
+                
+                {/* Create new tag option */}
+                {tagInput.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => addTagToSelection({ name: tagInput })}
+                    disabled={selectedTags.find((t) => t.name === tagInput) !== undefined}
+                    className="w-full text-left p-3 rounded-lg transition-all duration-200 hover:bg-gray-50 flex items-center justify-between border-t border-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-800 font-medium">#</span>
+                      <span className="font-medium text-zinc-700">{tagInput}</span>
+                    </div>
+                    <span className="text-gray-400 text-sm">创建新标签</span>
+                  </button>
+                )}
               </div>
             )}
 
