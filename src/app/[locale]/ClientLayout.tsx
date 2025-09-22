@@ -12,6 +12,7 @@ import { PostActionsProvider } from "@/contexts/post-actions-context";
 import { FeedProvider } from "@/contexts/feed-context";
 import { ActionBarProvider } from "@/contexts/action-bar-context";
 
+
 const Web3Provider = dynamic(() => import("@/app/Web3Provider"), {ssr: false});
 
 const Header = dynamic(() => import("@/components/header"), { ssr: false });
@@ -38,12 +39,13 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
                   <AuthManager />
                   <GlobalModals />
                   <Header />
-                  <main className="pb-12 md:pt-0 md:ml-16">{children}</main>
+                      <Header />
+                        <main className="pb-12 md:pt-0 md:ml-16">{children}</main>
                   <Footer />
                   <Toaster />
                 </FeedProvider>
               </ActionBarProvider>
-            </PostActionsProvider>
+            </PostActionsProvider>  
           </Web3Provider>
         </MantineThemeProvider>
     </ThemeProvider>

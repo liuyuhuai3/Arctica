@@ -123,6 +123,36 @@ export default function Header() {
           className="fixed left-0 top-0 bottom-auto w-16 h-screen border-r border-gray-200 bg-white/80 backdrop-blur-md dark:bg-gray-900 dark:border-gray-800 shadow-sm z-10"
           style={{ height: '100vh' }}
         >
+           {isDesktop && (
+    <div 
+      className="fixed left-16 top-0 h-screen w-60 bg-white 
+  dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 
+  shadow-lg transform -translate-x-full hover:translate-x-0 
+  transition-transform duration-300 z-50"
+      style={{
+        transform: 'translateX(-100%)',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateX(0)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateX(-100%)';
+      }}
+    >
+      <div className="p-4">
+        <h3 className="font-semibold mb-4">导航菜单</h3>
+        {/* 这里添加你想要的导航链接 */}
+        <nav className="space-y-2">
+          <a href="#" className="block p-2 hover:bg-gray-100 
+            dark:hover:bg-gray-800 rounded">Dashboard</a>
+          <a href="#" className="block p-2 hover:bg-gray-100 
+            dark:hover:bg-gray-800 rounded">Settings</a>
+          <a href="#" className="block p-2 hover:bg-gray-100 
+            dark:hover:bg-gray-800 rounded">Profile</a>
+          </nav>
+        </div>
+      </div>
+  )}
           <Container size="md" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', height: '100%', padding: '2rem 0.25rem' }}>
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 mb-6">
