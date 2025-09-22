@@ -1,7 +1,7 @@
 > [!WARNING]
->  O-Kitchen 应用仍在原型开发和早期开发阶段。
+>  Arctica 应用仍在原型开发和早期开发阶段。
 
-# O-KITCHEN
+# Arctica
 
  **[🇨🇳 中文](./README.md)  |  [🇺🇸 English](./README-EN.md)**
 
@@ -17,7 +17,7 @@
 
 ## 🩵 项目概述
 
-**O-Kitchen** 是一个去中心化的同人平台，为创作者提供了一个安全、开放的环境来分享和保存同人作品。作为 Tumblr、Pixiv 和 Lofter 的替代方案，O-Kitchen 基于区块链技术，确保创作者的作品长期保存并拥有完全的所有权。
+**Arctica** 是一个去中心化的同人平台，为创作者提供了一个安全、开放的环境来分享和保存同人作品。作为 Tumblr、Pixiv 和 Lofter 的替代方案，Arctica 基于区块链技术，确保创作者的作品长期保存并拥有完全的所有权。
 
 ## ✨ 核心功能
 
@@ -57,8 +57,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/o-kitchen/app.git
-cd o-kitchen
+git clone git clone https://github.com/fae-foundation/app.git
+cd app
 
 # 安装依赖
 pnpm install
@@ -90,7 +90,7 @@ LENS_API_KEY_TESTNET=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 ## 📁 项目结构
 
 ```
-o-kitchen/
+Arctica/
 ├── src/
 │   ├── app/                          # Next.js App Router 页面
 │   │   ├── [locale]/                # 国际化路由
@@ -170,7 +170,7 @@ pnpm format:check                 # 检查代码格式
 
 ## 🌐 多语言支持
 
-O-Kitchen 目前支持以下语言：
+Arctica 目前支持以下语言：
 
 - 🇨🇳 中文简体
 - 🇺🇸 English
@@ -192,11 +192,11 @@ O-Kitchen 目前支持以下语言：
 
 ## 🕊️ 支持与联系
 
-- 📮 邮箱联系: `rey.b.wu@gmail.com`
-- 👾 问题反馈: [Issues](https://github.com/o-kitchen/app/issues)
-- 💬 社区讨论: [Discussions](https://github.com/orgs/o-kitchen/discussions)
+- 📮 邮箱联系: `faefoundation@protonmail.com`
+- 👾 问题反馈: [Issues](https://github.com/fae-foundation/app/issues)
+- 💬 社区讨论: [Discussions](https://github.com/orgs/fae-foundation/discussions)
 
 
 ⭐ 如果这个项目对你有帮助，请给我们一个 Star！
 
-**Made with 🩵 by the O-Kitchen Labs**
+**Made with 🩵 by the FAE Foundation**

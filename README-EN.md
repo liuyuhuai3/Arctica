@@ -1,7 +1,7 @@
 > [!WARNING]
->  The o-kitchen app is still in prototyping and early development.
+>  The Arctica app is still in prototyping and early development.
 
-# O-KITCHEN
+# Arctica
 
  **[🇨🇳 中文](./README.md)  |  [🇺🇸 English](./README-EN.md)**
 
@@ -17,18 +17,18 @@
 
 ## 🩵 Project Overview
 
-**O-Kitchen** is a decentralized fandom platform that provides creators with a secure, open environment to share and preserve fan works. As an alternative to Tumblr, Pixiv, and Lofter, O-Kitchen leverages blockchain technology to ensure permanent preservation and complete ownership of creative works.
+**Arctica** is a decentralized fandom portal that provides creators with a secure, open environment to share and preserve fan works. As an alternative to Tumblr, Pixiv, and Lofter, Arctica leverages blockchain technology to ensure long-term preservation and complete ownership of creative works.
 
 ## ✨ Core Features
 
-- **🚢 On-Chain Storage**: Permanent content storage powered by Lens Protocol
+- **🚢 On-Chain Storage**: long-term content storage powered by Lens Protocol
 - **🎨 Creation Tools**: Rich text editor with image and text composition support
 - **🌐 Decentralized**: Censorship-resistant with full creator ownership
 - **👥 Social Interaction**: Follow, like, comment, and share functionality
 - **🔍 Content Discovery**: Smart recommendations and tag-based categorization
 - **🌍 Multilingual**: Chinese and English interface support
 - **📱 Responsive Design**: Optimized mobile and desktop experience
-- **🎭 Fandom Culture**: Features specifically designed for fan creation communities
+- **🩵 Fandom Culture**: Features specifically designed for fan creation communities
 
 ## 🧱 Technical Architecture
 
@@ -57,8 +57,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/o-kitchen/app.git
-cd o-kitchen
+git clone https://github.com/fae-foundation/app.git
+cd app
 
 # Install dependencies
 pnpm install
@@ -90,7 +90,7 @@ LENS_API_KEY_TESTNET=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 ## 📁 Project Structure
 
 ```
-o-kitchen/
+Arctica/
 ├── src/
 │   ├── app/                          # Next.js App Router pages
 │   │   ├── [locale]/                # Internationalized routes
@@ -169,7 +169,7 @@ pnpm format:check                 # Check code format
 
 ## 🌐 Multilingual Support
 
-O-Kitchen currently supports the following languages:
+Arctica currently supports the following languages:
 
 - 🇨🇳 Chinese Simplified
 - 🇺🇸 English
@@ -190,11 +190,11 @@ This project is licensed under the AGPL-3.0 License - see the [LICENSE](./LICENS
 
 ## 🕊️ Support & Contact
 
-- 📮 Mail: `rey.b.wu@gmail.com`
-- 👾 Reports: [Issues](https://github.com/o-kitchen/app/issues)
-- 💬 Discussion: [Discussions](https://github.com/orgs/o-kitchen/discussions)
+- 📮 Mail: `faefoundation@protonmail.com`
+- 👾 Reports: [Issues](https://github.com/fae-foundation/app/issues)
+- 💬 Discussion: [Discussions](https://github.com/orgs/fae-foundation/discussions)
 
 
 ⭐ If this project helps you, please give us a Star!
 
-**Made with 🩵 by the O-Kitchen community**
+**Made with 🩵 by the FAE Foundation**

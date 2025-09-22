@@ -363,7 +363,7 @@ export function ArtCreateForm({ onClose, onComplete }: ArtCreateFormProps) {
       await post(client, {
         contentUri: uri,
         //feed,
-        feed: evmAddress("0xd74a3C23DB0BFEA48007BeA447a5D20C422242fb")//o-kitchen works-feed for uploading fanworks on o-kitchen
+        feed: evmAddress("0xd74a3C23DB0BFEA48007BeA447a5D20C422242fb")//Arctica works-feed for uploading fanworks on Arctica
         //actions,
       })
       .andThen(handleOperationWith(walletClient))

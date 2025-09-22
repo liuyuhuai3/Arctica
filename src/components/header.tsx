@@ -126,7 +126,7 @@ export default function Header() {
           <Container size="md" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', height: '100%', padding: '2rem 0.25rem' }}>
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 mb-6">
-              <img src="/icon0.svg" alt="o-kitchen" className="h-10 w-10" />
+              <img src="/icon0.svg" alt="Arctica" className="h-10 w-10" />
             </Link>
             
             {/* Desktop Navigation*/}
