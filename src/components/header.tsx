@@ -50,6 +50,7 @@ export default function Header() {
   const { address, isConnected, isConnecting, status } = useAccount();
   const { setProfileSelectModalOpen } = useProfileSelectStore();
   const pathname = usePathname();
+  const [showNavbar, setShowNavbar] = useState(false)  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [uploadDialogOpened, setUploadDialogOpened] = useState(false);
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
@@ -83,6 +84,19 @@ export default function Header() {
     }
   }, [isConnected, address, currentProfile, setProfileSelectModalOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // 滚动超过viewport高度就显示navbar
+      const scrollY = window.scrollY
+      const threshold = window.innerHeight
+      setShowNavbar(scrollY > threshold)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll',        
+  handleScroll)
+  }, [])
+
   const navItems = [
     { href: "/", label: navT("feed"), icon: Home },
     //{ href: '/discover', label: navT('discover'), icon: Compass },
@@ -112,13 +126,17 @@ export default function Header() {
 
   return (
     <AppShell
-      header={isDesktop ? { height: '100vh' } : undefined}
-      footer={!isDesktop ? { height: 50 } : undefined}
-      navbar={isDesktop ? { width: 64, breakpoint: 'md', collapsed: { mobile: true } } : undefined}
-      padding="md"
+    header={isDesktop && showNavbar ? { height: '100vh'      
+  } : undefined}
+    footer={!isDesktop && showNavbar ? { height: 50 } :      
+  undefined}
+    navbar={isDesktop && showNavbar ? { width: 64,
+  breakpoint: 'md', collapsed: { mobile: true } } :
+  undefined}
+    padding="md"
     >
       {/* Desktop Header with Mantine AppShell */}
-      {isDesktop && (
+      {isDesktop && showNavbar &&(
         <AppShell.Header 
           className="fixed left-0 top-0 bottom-auto w-16 h-screen border-r border-gray-200 bg-white/80 backdrop-blur-md dark:bg-gray-900 dark:border-gray-800 shadow-sm z-10"
           style={{ height: '100vh' }}
@@ -342,7 +360,7 @@ export default function Header() {
       )}
 
       {/* Mobile Footer with Mantine AppShell */}
-      {!isDesktop && (
+      {!isDesktop && showNavbar && (
         <AppShell.Footer 
           className="border-t border-gray-200 bg-white/80 backdrop-blur-md dark:bg-gray-900 dark:border-gray-800 shadow-sm"
         >
