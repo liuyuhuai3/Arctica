@@ -13,7 +13,7 @@ export function LandingSection() {
   const t = useTranslations("home");
   const { isAuthenticated } = useAuthCheck();
   const [rotate, setRotate] = useState(false);
-
+  
   return (
     <section className="relative sm:py-20 py-10 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white max-auto mx-auto">
       {/* Harbor Background Elements */}

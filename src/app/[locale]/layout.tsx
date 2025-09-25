@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { Inter } from "next/font/google";
+import { Inter, Mansalva } from "next/font/google";
 import "../globals.css";
 import ClientLayout from "./ClientLayout";
 import { routing } from "@/i18n/routing";
@@ -8,6 +8,11 @@ import { routing } from "@/i18n/routing";
 export const dynamic = 'force-dynamic';
 
 const inter = Inter({ subsets: ["latin"] });
+const mansalva = Mansalva({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-mansalva'
+});
 
 export const metadata = {
   title: "Arctica",
@@ -31,7 +36,7 @@ export default async function RootLayout({
   // const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className={mansalva.variable}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale}>
           <ClientLayout>{children}</ClientLayout>
